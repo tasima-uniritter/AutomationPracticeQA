@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="TestCase2A.html">TestCase2A</a></td></tr>
+<tr><td><a href="TestCase2B.html">TestCase2B</a></td></tr>
+<tr><td><a href="TestCase2C.html">TestCase2C</a></td></tr>
+<tr><td><a href="TestCase2D.html">TestCase2D</a></td></tr>
+<tr><td><a href="TestCase2E.html">TestCase2E</a></td></tr>
+<tr><td><a href="TestCase2F.html">TestCase2F</a></td></tr>
+<tr><td><a href="TestCase2G.html">TestCase2G</a></td></tr>
+</tbody></table>
+</body>
+</html>

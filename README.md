@@ -17,7 +17,43 @@ Projeto de automação de testes - Qualidade de Software
 
 ### 1 - Carrinho de Compras
 
+#### A.
+```
+```
+
+#### B.
+
+```
+```
+
+#### C.
+
+```    
+```
+
+#### D.
+
+```	 
+
+```
+
+#### E.
+
+```
+```
+
+#### F.
+
+``` 
+```
+
+#### G.
+
+``` 
+```
+
 ### 2 - Contact Us
+
 #### A.
 ```
     Dado que eu quero acessar a página para contatar o administrador
