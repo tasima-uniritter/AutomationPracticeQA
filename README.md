@@ -2,7 +2,7 @@
 
 Projeto de automação de testes - Qualidade de Software
 
-##Integrantes
+## Integrantes
 
 * Alex
 * Gelson
@@ -14,43 +14,43 @@ Projeto de automação de testes - Qualidade de Software
 ### 1 - Carrinho de Compras
 
 ### 2 - Contact Us
-####A.
+#### A.
 ```
     Dado que eu quero acessar a página para contatar o administrador
     Quando eu clicar no menu "Contact us" na página principal
     Então a página com o título "Customer service - Contact us" deverá ser exibida.
 ```
-####B.
+#### B.
 ```
     Dado que eu quero enviar uma mensagem para o administrador
     Quando eu tentar enviar uma mensagem com o campo "Message" em branco
     Então a mensagem de erro "The message cannot be blank." deverá ser exibida.
 ```
-####C.
+#### C.
 ```
     Dado que eu quero enviar uma mensagem para o administrador
     Quando eu tentar enviar uma mensagem com o campo "Subject Heading" em branco
     Então a mensagem de erro "Please select a subject from the list provided." deverá ser exibida.
 ```
-####D.
+#### D.
 ```
     Dado que eu quero enviar uma mensagem para o administrador sobre o assunto "Customer service"
     Quando eu selecionar a opção "Customer service" no campo "Subject Heading"
     Então a informação "For any question about a product, an order" deverá ser exibida logo abaixo do campo.
 ```
-####E.
+#### E.
 ```
     Dado que eu quero enviar uma mensagem para o administrador sobre o assunto "Webmaster"
     Quando eu selecionar a opção "Webmaster" no campo "Subject Heading"
     Então a informação "If a technical problem occurs on this website" deverá ser exibida logo abaixo do campo.
 ```
-####F.
+#### F.
 ```
     Dado que eu quero enviar uma mensagem para o administrador
     Quando eu tentar enviar uma mensagem com um e mail inválido no campo "Email address"
     Então a mensagem de erro "Invalid email address." deverá ser exibida.
 ```
-####G.
+#### G.
 ```
     Dado que eu quero enviar uma mensagem para o administrador
     Quando eu preencher todos os campos corretamente
