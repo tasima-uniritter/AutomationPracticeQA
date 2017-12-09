@@ -1,6 +1,6 @@
 # AutomationPracticeQA
 
-Projeto de automação de testes - Qualidade de Software
+Projeto de automação de testes - Qualidade de Software - TASIMA
 
 ## Projeto
 
