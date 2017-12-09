@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://automationpractice.com/" />
+<title>TestCase1C</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">TestCase1C</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//ul[@id='homefeatured']/li/div/div[2]/div[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='layer_cart']/div/div[2]/div[4]/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//ul[@id='homefeatured']/li[2]/div/div[2]/div[2]/a/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='layer_cart']/div/div[2]/div[4]/span/span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=total_product</td>
+	<td>totalProducts</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars['totalProducts'].substring(1)}</td>
+	<td>totalProducts</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${totalProducts}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//tr[2]/td[6]</td>
+	<td>productValue</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars['productValue'].substring(1)}</td>
+	<td>productValue</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${productValue}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//tr[2]/td[7]/div/a/i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>id=total_product</td>
+	<td>currentValue</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{storedVars['currentValue'].substring(1)}</td>
+	<td>currentValue</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${currentValue}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>javascript{parseFloat(storedVars['totalProducts']-storedVars['productValue']).toFixed(2)}</td>
+	<td>result</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${result}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>javascript{parseFloat(storedVars['totalProducts']-storedVars['productValue']).toFixed(2) == storedVars['currentValue']}</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.icon-trash</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
