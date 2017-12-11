@@ -19,37 +19,37 @@ Projeto de automação de testes - Qualidade de Software - TASIMA
 
 #### A.
 ```
-Dado que eu quero adicionar um item ao carrinho de compras
-Quando eu clicar em “Add to cart” de um item e depois confirmar em “Proceed to checkout”
-Então o item deve ser adicionado na lista de produtos do carrinho de compras
+    Dado que eu quero adicionar um item ao carrinho de compras
+    Quando eu clicar em “Add to cart” de um item e depois confirmar em “Proceed to checkout”
+    Então o item deve ser adicionado na lista de produtos do carrinho de compras
 ```
 
 #### B.
 ```
-Dado que eu quero remover um item do carrinho de compras
-Quando eu clicar em no botão do carrinho e a lista tiver apenas um produto, depois que clicar no botão de remover de um item da lista
-Então o item selecionado deve ser removido da lista e deve aparecer a mensagem: “Your shopping cart is empty. “
+    Dado que eu quero remover um item do carrinho de compras
+    Quando eu clicar em no botão do carrinho e a lista tiver apenas um produto, depois que clicar no botão de remover de um item da lista
+    Então o item selecionado deve ser removido da lista e deve aparecer a mensagem: “Your shopping cart is empty. “
 ```
 
 #### C.
 ```    
-Dado que eu quero remover um item do carrinho de compras
-Quando eu clicar em no botão do carrinho e a lista tiver mais de um  produto, depois que clicar no botão de remover de um item da lista
-Então o item selecionado deve ser removido da lista e os campos de totalização: Total products, Total shipping, Total, Tax e TOTAL devem ser ajustados
+    Dado que eu quero remover um item do carrinho de compras
+    Quando eu clicar em no botão do carrinho e a lista tiver mais de um  produto, depois que clicar no botão de remover de um item da lista
+    Então o item selecionado deve ser removido da lista e os campos de totalização: Total products, Total shipping, Total, Tax e TOTAL devem ser ajustados
 ```
 
 #### D.
 ```	 
-Dado que eu quero visualizar um produto e adicionar ao carrinho
-Quando eu clicar na imagem do produto, informar todos dados do item após clicar “Add to cart” e depois na pop-up clicar em “Proceed to checkout”
-Então O item deve ser adicionado no carrinho de compras
+    Dado que eu quero visualizar um produto e adicionar ao carrinho
+    Quando eu clicar na imagem do produto, informar todos dados do item após clicar “Add to cart” e depois na pop-up clicar em “Proceed to checkout”
+    Então O item deve ser adicionado no carrinho de compras
 ```
 
 #### E.
 ```
-Dado que eu quero visualizar um produto e adicionar ao carrinho
-Quando eu clicar na imagem do produto, informar todos dados do item após clicar “Add to cart” e depois na pop-up clicar em “Proceed to checkout”
-Então O item deve ser adicionado no carrinho de compras
+    Dado que eu quero visualizar um produto e adicionar ao carrinho
+    Quando eu clicar na imagem do produto, informar todos dados do item após clicar “Add to cart” e depois na pop-up clicar em “Proceed to checkout”
+    Então O item deve ser adicionado no carrinho de compras
 ```
 
 #### F.
