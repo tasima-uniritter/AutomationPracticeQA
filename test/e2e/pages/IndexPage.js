@@ -1,8 +1,11 @@
 'use strict';
-//var AuthenticatedPage = require('./AuthenticatedPage.js')
 
 var IndexPage = function(){
   var contactUsButton = $('#contact-link');
+  var shoppingCartButton = $('.shopping_cart');
+  var firstItemButton = $('.button-container > a:first');
+  var continueShoppingButton = $('.continue.btn.btn-default.button.exclusive-medium');
+  var quantityInCart = $('.ajax_cart_quantity.unvisible');
 
   this.get = function(){
     browser.waitForAngularEnabled(false);
@@ -12,20 +15,19 @@ var IndexPage = function(){
   this.accessContactUs = function () {
     contactUsButton.click();
   }
-
-//  this.validLogin = function() {
-//    emailInput.sendKeys('mauricio.webdev@gmail.com')
-//    passwordInput.sendKeys('testeteste');
-//    sigInButton.click();
-//
-//    return new AuthenticatedPage();
-//  }
-//
-//  this.failMessage = function(){
-//    return $('.alert-danger > ol > li').getText();
-//  }
-
-
+  
+  this.accessShoppingCart = function () {
+	shoppingCartButton.click();
+  }
+  
+  this.addItemToCartAndContinueShopping = function () {
+	firstItemButton.click();
+	continueShoppingButton.click();
+  }
+  
+  this.getShoppingCartItems = function () {
+	  return quantityInCart.getText();
+  }
 
 }
 
