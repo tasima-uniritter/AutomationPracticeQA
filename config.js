@@ -5,7 +5,7 @@ exports.config = {
         'browserName': 'chrome',
         'chromeOptions': { 
             'args': [
-	        '--disable-infobars'
+	        '--disable-infobars', '--headless', '--disable-gpu', '--window-size=800,600'
             ]
         }
     }	
