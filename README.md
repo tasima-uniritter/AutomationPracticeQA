@@ -1,6 +1,6 @@
 # AutomationPracticeQA
 
-Projeto de automação de testes - Qualidade de Software - TASIMA
+Projeto de automação de testes - Qualidade de Software - TASIMA - [![CircleCI](https://circleci.com/gh/tasima-uniritter/AutomationPracticeQA.svg?style=svg)](https://circleci.com/gh/tasima-uniritter/AutomationPracticeQA)
 
 ## Projeto
 
