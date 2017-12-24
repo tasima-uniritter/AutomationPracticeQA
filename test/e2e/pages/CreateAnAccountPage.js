@@ -1,41 +1,49 @@
 'use strict';
 
 var IndexPage = require('../pages/IndexPage.js');
-var EC = protractor.ExpectedConditions;
+var LoginPage = require('../pages/LoginPage.js');
 
-describe('Automation Practice - Shopping Cart Tests', function() {
+var CreateAnAccountPage = function(){
 
+    var indexPage;
+    var loginPage;
     var originalTimeout;
+    var EC = protractor.ExpectedConditions;
 
-    beforeEach(function() {
-
+    this.start = function(){
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
-    });
 
-    afterEach(function() {
+        indexPage = new IndexPage();
+        loginPage = new LoginPage();
+        indexPage.get();
+    }
+
+    this.finish = function () {
         jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
-    });
+    }
 
-    it('Create an account', function() {
+    this.createAnAccount = function () {
 
-        var email = Math.floor((Math.random()*100000)) + '@teste.com.br';
+        indexPage.accessLogin();
+        loginPage.newAccount(this.generateEmail());
+        this.isLoaded();
+        this.defineYourPersonalInformation();
+        this.defineYourAddress();
+        this.submit();
+        this.validadeAccount();
+    }
 
-        browser.waitForAngularEnabled(false)
-        browser.get('http://automationpractice.com/index.php');
+    this.generateEmail = function () {
+        return Math.floor((Math.random()*100000)) + '@teste.com.br';
+    }
 
-        // Main page, click in login
-        element(by.className('login')).click();
-
-        // send informations
-        EC.browser.wait(EC.presenceOf(element(by.id('email_create'))), 50000);
-        element(by.id('email_create')).sendKeys(email);
-        element(by.id('SubmitCreate')).click();
-
-        // page create an account
+    this.isLoaded = function () {
         browser.wait(EC.presenceOf(element(by.id('email'))), 50000);
         browser.wait(EC.presenceOf(element(by.id('customer_firstname'))), 50000);
+    }
 
+    this.defineYourPersonalInformation = function () {
         $('#id_gender1').click();
         element(by.name('customer_firstname')).sendKeys('Fulano');
         element(by.name('customer_lastname')).sendKeys('De Tal');
@@ -47,38 +55,32 @@ describe('Automation Practice - Shopping Cart Tests', function() {
         element(by.name('years')).sendKeys('1980');
         $('#newsletter').click();
         $('#optin').click();
+    }
 
-        //YOUR ADDRESS
+    this.defineYourAddress = function () {
         element(by.name('firstname')).sendKeys('Fulano');
         element(by.name('lastname')).sendKeys('De Tal');
         element(by.name('company')).sendKeys('teste');
         element(by.name('address1')).sendKeys('teste');
         element(by.name('address2')).sendKeys('teste');
         element(by.name('city')).sendKeys('teste');
-
-
-        element.all(by.css('.id_state option')).filter(function(elem, index) {
-            return elem.getText().then(function(text) {
-                return text === 'Florida';
-            });
-        }).first().click();
-
+        element.all(by.css('select#id_state.form-control option')).last().click();
         element(by.name('postcode')).sendKeys('12345');
         element.all(by.id('#id_country select')).first();
         element(by.name('other')).sendKeys('teste');
         element(by.name('phone')).sendKeys(Math.floor((Math.random()*100000)));
         element(by.name('phone_mobile')).sendKeys(Math.floor((Math.random()*100000)));
         element(by.name('alias')).sendKeys(Math.floor((Math.random()*100000)) + '@teste.com.br');
+    }
 
+    this.submit = function () {
         element(by.id('submitAccount')).click();
+    }
 
-        // valida login
+    this.validadeAccount = function () {
         EC.browser.wait(EC.presenceOf(element(by.className('header_user_info'))), 50000);
+        expect(element(by.className('page-heading')).getText()).toEqual('MY ACCOUNT');
+    }
+}
 
-        var title = element(by.className('page-heading'));
-        expect(title.getText()).toEqual('MY ACCOUNT');
-
-        browser.sleep(10000);
-    });
-
-});
+module.exports = CreateAnAccountPage;

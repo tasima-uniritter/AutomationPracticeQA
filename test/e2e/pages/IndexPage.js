@@ -4,7 +4,8 @@ var IndexPage = function(){
   var contactUsButton = $('#contact-link');
   var shoppingCartButton = $('.shopping_cart');
   var firstItemButton = $('.button-container > a:first');
-  var continueShoppingButton = $('.continue.btn.btn-default.button.exclusive-medium');
+
+  var continueShoppingButton = $('.btn.btn-default.button.button-medium');
   var quantityInCart = $('.ajax_cart_quantity.unvisible');
 
   this.get = function(){
@@ -27,6 +28,10 @@ var IndexPage = function(){
   
   this.getShoppingCartItems = function () {
 	  return quantityInCart.getText();
+  }
+
+  this.accessLogin = function () {
+      element(by.className('login')).click();
   }
 
 }
