@@ -20,7 +20,7 @@ Os testes foram feitos tanto no selenium quanto no
 * [NodeJS](https://https://www.notejs.org).
 * [Protractor](https://http://www.protractortest.org).
 
-Após instalar o nodejs siga os passos abaixo para instalar o protractor, atualizar e executar o wedriver:
+Após instalar o nodejs siga os passos abaixo para instalar o protractor, atualizar e executar o webdriver:
 
 npm install -g protractor
 
