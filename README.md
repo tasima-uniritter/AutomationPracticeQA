@@ -13,6 +13,25 @@ Projeto de automação de testes - Qualidade de Software - TASIMA - [![CircleCI]
 * Lucas Gentile
 * Tiago
 
+## Informações Gerais
+Os testes foram feitos tanto no selenium quanto no 
+
+## Requisitos:
+* [NodeJS](https://https://www.notejs.org).
+* [Protractor](https://http://www.protractortest.org).
+
+Após instalar o nodejs siga os passos abaixo para instalar o protractor, atualizar e executar o wedriver:
+
+npm install -g protractor
+
+webdriver-manager update
+
+webdriver-manager start
+
+Em outro terminal execute os testes automatizados execute na raiz do projeto AutomationPracticeQA:
+
+protractor config.js
+
 ## Critérios de Aceitação
 
 ### 1 - Carrinho de Compras
