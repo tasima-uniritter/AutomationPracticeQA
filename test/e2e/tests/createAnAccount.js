@@ -42,11 +42,7 @@ describe('Automation Practice - Shopping Cart Tests', function() {
         element(by.name('passwd')).sendKeys('teste');
         element(by.name('days')).sendKeys('10');
 
-        // element.all(by.id('months option')).filter(function(elem, index) {
-        //     return elem.getText().then(function(text) {
-        //         return text === 'January&nbsp;';
-        //     });
-        // }).first().click(); // COM ERRO
+        element.all(by.css('select#months.form-control option')).last().click();
 
         element(by.name('years')).sendKeys('1980');
         $('#newsletter').click();
@@ -80,7 +76,7 @@ describe('Automation Practice - Shopping Cart Tests', function() {
         EC.browser.wait(EC.presenceOf(element(by.className('header_user_info'))), 50000);
 
         var title = element(by.className('page-heading'));
-        expect(title.getText()).toEqual('My account');
+        expect(title.getText()).toEqual('MY ACCOUNT');
 
         browser.sleep(10000);
     });
