@@ -1,58 +1,63 @@
 'use strict';
 
-var IndexPage = require('../pages/ContactUsPage.js')
+var ContactUsPage = require('../pages/ContactUsPage.js')
 
 describe('Automation Practice - Contact Us Tests', function() {
-//TODO
+    var contactUsPage;
 
-//    var indexPage;
-//
-//    beforeEach(function(){
-//        indexPage = new IndexPage();
-//        indexPage.get();
-//    });
-//
-//    it('Deve acessar a página para contatar o administrador', function() {
-//        indexPage.accessContactUs();
-//        expect("test").toEqual("test");
-//    });
+    beforeEach(function () {
+        contactUsPage = new ContactUsPage();
+        contactUsPage.get();
+    });
 
-//'use strict';
-//var SignInPage = require('../pages/SignInPage.js')
-//
-//describe('SignInPage suite scenarios', function() {
-//  var page;
-//
-//  beforeEach(function(){
-//    page = new SignInPage();
-//    page.get();
-//
-//  })
-//
-//  it('Should show authentication failed when enter invalid user and password', function() {
-//    page.login('mauricio.webdev@gmail.com','123123');
-//    expect(page.failMessage()).toEqual('Authentication failed.');
-//  });
-//
-//  it('Should inform that password is mandatory', function(){
-//    page.login('mauricio.webdev@gmail.com','');
-//    expect(page.failMessage()).toEqual('Password is required.');
-//  })
-//
-//  it('Should inform that email is mandatory', function() {
-//    page.login('','123123');
-//    expect(page.failMessage()).toEqual('An email address required.');
-//  })
-//
-//  it('Should login with email and password', function(){
-//    expect(page.getEmailInput().isPresent()).toBe(true);
-//    expect(page.getPasswordInput().isPresent()).toBe(true);
-//  })
-//
-//  it('Should login when enter valid user', function(){
-//    var authenticatedPage = page.validLogin();
-//    expect(authenticatedPage.isAuthenticated()).toBe(true);
-//  })
+    var expectFailMessage = function (failMessage) {
+        expect(contactUsPage.failMessage()).toEqual(failMessage);
+    };
 
+    var getMessageText = function (selector) {
+        return $(selector).getText();
+    };
 
+    it('2B - Deve exibir mensagem de erro ao tentar enviar uma mensagem ao administrador com uma mensagem em branco', function () {
+        contactUsPage.fillPageForm(2, "A@A.COM", "123", "");
+
+        contactUsPage.submitMessage();
+
+        expectFailMessage("The message cannot be blank.");
+    });
+
+    it('2C - Deve exibir mensagem de erro ao tentar enviar uma mensagem ao administrador sem selecionar um assunto', function () {
+        contactUsPage.fillPageForm(null, "A@A.COM", "123", "TEST");
+
+        contactUsPage.submitMessage();
+
+        expectFailMessage("Please select a subject from the list provided.");
+    });
+
+    it('2D - Deve exibir mensagem de informação ao selecionar a opção "Customer Service" como assunto', function () {
+        contactUsPage.selectOptionSubjectHeadingCombobox(2);
+
+        expect(getMessageText('#desc_contact2')).toEqual('For any question about a product, an order');
+    });
+
+    it('2E - Deve exibir mensagem de informação ao selecionar a opção "Webmaster" como assunto', function () {
+        contactUsPage.selectOptionSubjectHeadingCombobox(1);
+
+        expect(getMessageText("#desc_contact1")).toEqual('If a technical problem occurs on this website');
+    });
+
+    it('2F - Deve exibir mensagem de erro ao tentar enviar uma mensagem ao administrador com um email inválido', function () {
+        contactUsPage.fillPageForm(2, "", "", "Teste");
+
+        contactUsPage.submitMessage();
+
+        expectFailMessage("Invalid email address.")
+    });
+
+    it('2G - Deve exibir mensagem de sucesso ao enviar uma mensagem ao administrador com todos os campos preenchidos corretamente', function () {
+        contactUsPage.fillPageForm(1, "TESTE@TESTE.COM", "REF", "Mensagem");
+        contactUsPage.submitMessage();
+
+        expect(getMessageText("p.alert.alert-success")).toEqual('Your message has been successfully sent to our team.');
+    });
 });

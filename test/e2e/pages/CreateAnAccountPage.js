@@ -3,14 +3,14 @@
 var IndexPage = require('../pages/IndexPage.js');
 var LoginPage = require('../pages/LoginPage.js');
 
-var CreateAnAccountPage = function(){
+var CreateAnAccountPage = function () {
 
     var indexPage;
     var loginPage;
     var originalTimeout;
     var EC = protractor.ExpectedConditions;
 
-    this.start = function(){
+    this.start = function () {
         originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
@@ -35,7 +35,7 @@ var CreateAnAccountPage = function(){
     }
 
     this.generateEmail = function () {
-        return Math.floor((Math.random()*100000)) + '@teste.com.br';
+        return Math.floor((Math.random() * 100000)) + '@teste.com.br';
     }
 
     this.isLoaded = function () {
@@ -68,9 +68,9 @@ var CreateAnAccountPage = function(){
         element(by.name('postcode')).sendKeys('12345');
         element.all(by.id('#id_country select')).first();
         element(by.name('other')).sendKeys('teste');
-        element(by.name('phone')).sendKeys(Math.floor((Math.random()*100000)));
-        element(by.name('phone_mobile')).sendKeys(Math.floor((Math.random()*100000)));
-        element(by.name('alias')).sendKeys(Math.floor((Math.random()*100000)) + '@teste.com.br');
+        element(by.name('phone')).sendKeys(Math.floor((Math.random() * 100000)));
+        element(by.name('phone_mobile')).sendKeys(Math.floor((Math.random() * 100000)));
+        element(by.name('alias')).sendKeys(Math.floor((Math.random() * 100000)) + '@teste.com.br');
     }
 
     this.submit = function () {
