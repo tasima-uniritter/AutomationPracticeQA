@@ -9,6 +9,10 @@ var LoginPage = function () {
         element(by.id('email_create')).sendKeys(email);
         element(by.id('SubmitCreate')).click();
     }
+
+    this.signOut = function () {
+        $('.logout').click();
+    }
 }
 
 module.exports = LoginPage;

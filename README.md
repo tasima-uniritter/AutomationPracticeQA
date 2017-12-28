@@ -125,3 +125,19 @@ protractor config.js
     Quando eu preencher todos os campos corretamente
     Então quando eu clicar no botão "Send", a mensagem de sucesso "Your message has been successfully sent to our team." deverá ser exibida.
 ```
+
+### 3 - Novo cadastro
+
+#### A.
+```
+    Dado que eu não possou um cadastro no site
+    Quando eu clicar "Login", passar um email valido e informações de cadastro validas
+    Então ocorrer o cadastro com sucesso e aparecer a tela da conta do usuário
+```
+
+#### B.
+```
+    Dado que eu não possou um cadastro no site
+    Quando eu clicar "Login" e coloco um email inválido
+    Então o devo receber a infomação de email inválido 
+```
