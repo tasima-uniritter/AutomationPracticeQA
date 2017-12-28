@@ -130,14 +130,14 @@ protractor config.js
 
 #### A.
 ```
-    Dado que eu não possou um cadastro no site
-    Quando eu clicar "Login", passar um email valido e informações de cadastro validas
+    Dado que não possuo um cadastro no site
+    Quando eu clicar "Login", dígito um e-mail válido e dígito informações de cadastro válidas
     Então ocorrer o cadastro com sucesso e aparecer a tela da conta do usuário
 ```
 
 #### B.
 ```
-    Dado que eu não possou um cadastro no site
-    Quando eu clicar "Login" e coloco um email inválido
-    Então o devo receber a infomação de email inválido 
+    Dado que eu não possuo um cadastro no site
+    Quando eu clicar "Login" e coloco um e-mail inválido
+    Então devo receber a infomação de email inválido 
 ```
