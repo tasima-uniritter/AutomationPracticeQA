@@ -2,17 +2,27 @@
 
 var LoginPage = function () {
 
-    var EC = protractor.ExpectedConditions;
+    constructor
+    {
+        this.emailCreator = $('#email_create');
+        this.submitCreator = $('#SubmitCreate');
+        this.expectedConditions = protractor.ExpectedConditions;
+        this.buttonLogout = $('.logout');
+    }
 
     this.newAccount = function (email) {
-        EC.browser.wait(EC.presenceOf(element(by.id('email_create'))), 50000);
-        element(by.id('email_create')).sendKeys(email);
-        element(by.id('SubmitCreate')).click();
+        this.expectedConditions.browser.wait(this.expectedConditions.presenceOf(this.emailCreator), 50000);
+        this.emailCreator.sendKeys(email);
+        this.submitCreator.click();
     }
 
     this.signOut = function () {
-        $('.logout').click();
+        this.buttonLogout.click();
     }
-}
+
+    this.signIn = function () {
+
+    }
+};
 
 module.exports = LoginPage;

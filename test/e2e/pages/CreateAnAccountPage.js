@@ -5,23 +5,48 @@ var LoginPage = require('../pages/LoginPage.js');
 
 var CreateAnAccountPage = function () {
 
-    var indexPage;
-    var loginPage;
-    var originalTimeout;
-    var EC = protractor.ExpectedConditions;
-    var textValidation;
+    constructor
+    {
+        this.indexPage = new IndexPage();
+        this.loginPage = new LoginPage();
+        this.originalTimeout;
+        this.expectedConditions = protractor.ExpectedConditions;
+        this.textValidation;
+
+        this.email = $('#email');
+        this.idGender = $('#id_gender1');
+        this.customerFirstname = $('#customer_firstname');
+        this.customerLastname = $('#customer_lastname');
+        this.passwd = $('#passwd');
+        this.days = $('#days');
+        this.years = $('#years');
+        this.newsletter = $('#newsletter');
+        this.optin = $('#optin');
+        this.firstname = $('#firstname');
+        this.lastname = $('#lastname');
+        this.company = $('#company');
+        this.address1 = $('#address1');
+        this.address2 = $('#address2');
+        this.city = $('#city');
+        this.postcode = $('#postcode');
+        this.other = $('#other');
+        this.phone = $('#phone');
+        this.phoneMobile = $('#phone_mobile');
+        this.alias = $('#alias');
+
+        this.submitAccount = $('#submitAccount');
+        this.accountError = $('#create_account_error');
+    }
 
     this.start = function () {
-        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        this.originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
         jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
 
-        indexPage = new IndexPage();
-        loginPage = new LoginPage();
-        indexPage.get();
+        this.indexPage.get();
     }
 
     this.finish = function () {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = this.originalTimeout;
     }
 
     this.createAnAccountWithSucess = function () {
@@ -31,16 +56,16 @@ var CreateAnAccountPage = function () {
         this.defineYourAddress();
         this.submit();
         this.validateAccount();
-        loginPage.signOut();
+        this.loginPage.signOut();
     }
 
     this.accessLogin = function (email) {
-        indexPage.accessLogin();
-        loginPage.newAccount(email);
+        this.indexPage.accessLogin();
+        this.loginPage.newAccount(email);
     }
 
     this.accessLoginError = function () {
-        return $('#create_account_error').isPresent();
+        return this.accountError.isPresent();
     }
 
     this.generateEmail = function () {
@@ -48,49 +73,49 @@ var CreateAnAccountPage = function () {
     }
 
     this.isLoaded = function () {
-        browser.wait(EC.presenceOf($('#email')), 50000);
-        browser.wait(EC.presenceOf($('#customer_firstname')), 50000);
+        browser.wait(this.expectedConditions.presenceOf(this.email), 50000);
+        browser.wait(this.expectedConditions.presenceOf(this.customerFirstname), 50000);
     }
 
     this.defineYourPersonalInformation = function () {
-        $('#id_gender1').click();
-        $('#customer_firstname').sendKeys('Fulano');
-        $('#customer_lastname').sendKeys('De Tal');
-        $('#passwd').sendKeys('teste');
-        $('#days').sendKeys('10');
+        this.idGender.click();
+        this.customerFirstname.sendKeys('Fulano');
+        this.customerLastname.sendKeys('De Tal');
+        this.passwd.sendKeys('teste');
+        this.days.sendKeys('10');
         element.all(by.css('select#months.form-control option')).last().click();
-        $('#years').sendKeys('1980');
-        $('#newsletter').click();
-        $('#optin').click();
+        this.years.sendKeys('1980');
+        this.newsletter.click();
+        this.optin.click();
     }
 
     this.defineYourAddress = function () {
-        $('#firstname').sendKeys('Fulano');
-        $('#lastname').sendKeys('De Tal');
-        $('#company').sendKeys('teste');
-        $('#address1').sendKeys('teste');
-        $('#address2').sendKeys('teste');
-        $('#city').sendKeys('teste');
+        this.firstname.sendKeys('Fulano');
+        this.lastname.sendKeys('De Tal');
+        this.company.sendKeys('teste');
+        this.address1.sendKeys('teste');
+        this.address2.sendKeys('teste');
+        this.city.sendKeys('teste');
         element.all(by.css('select#id_state.form-control option')).last().click();
-        $('#postcode').sendKeys('12345');
+        this.postcode.sendKeys('12345');
         element.all(by.id('#id_country select')).first();
-        $('#other').sendKeys('teste');
-        $('#phone').sendKeys(Math.floor((Math.random() * 100000)));
-        $('#phone_mobile').sendKeys(Math.floor((Math.random() * 100000)));
-        $('#alias').sendKeys(Math.floor((Math.random() * 100000)) + '@teste.com.br');
+        this.other.sendKeys('teste');
+        this.phone.sendKeys(Math.floor((Math.random() * 100000)));
+        this.phoneMobile.sendKeys(Math.floor((Math.random() * 100000)));
+        this.alias.sendKeys(Math.floor((Math.random() * 100000)) + '@teste.com.br');
     }
 
     this.submit = function () {
-        $('#submitAccount').click();
+        this.submitAccount.click();
     }
 
     this.validateAccount = function () {
-        EC.browser.wait(EC.presenceOf(element(by.className('header_user_info'))), 50000);
-        textValidation = element(by.className('page-heading')).getText();
+        this.expectedConditions.browser.wait(this.expectedConditions.presenceOf(element(by.className('header_user_info'))), 50000);
+        this.textValidation = element(by.className('page-heading')).getText();
     }
 
     this.getValidateText = function () {
-        return textValidation;
+        return this.textValidation;
     }
 }
 
