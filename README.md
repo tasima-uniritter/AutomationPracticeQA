@@ -17,7 +17,8 @@ Projeto de automação de testes - Qualidade de Software - TASIMA - [![CircleCI]
 Os testes foram feitos tanto no selenium quanto no protractor.
 
 Integração contínua no circleci ativa.
-Builds podem ser verificadas em: https://circleci.com/gh/tasima-uniritter/AutomationPracticeQA
+Builds podem ser verificadas em:
+https://circleci.com/gh/tasima-uniritter/AutomationPracticeQA
 
 
 ## Requisitos:
