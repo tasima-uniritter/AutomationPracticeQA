@@ -17,7 +17,7 @@ Projeto de automação de testes - Qualidade de Software - TASIMA - [![CircleCI]
 Os testes foram feitos tanto no selenium quanto no protractor.
 
 Integração contínua no circleci ativa.
-Builds podem ser verificadas em:
+Builds podem ser verificadas em: <br/>
 https://circleci.com/gh/tasima-uniritter/AutomationPracticeQA
 
 
@@ -25,7 +25,7 @@ https://circleci.com/gh/tasima-uniritter/AutomationPracticeQA
 * [NodeJS](https://https://www.notejs.org).
 * [Protractor](https://http://www.protractortest.org).
 
-Após instalar o nodejs siga os passos abaixo para instalar o protractor, atualizar e executar o webdriver:
+Após instalar o nodejs, abra um terminal e siga os passos abaixo para instalar o protractor, atualizar e executar o webdriver:
 
 npm install -g protractor
 
@@ -33,7 +33,7 @@ webdriver-manager update
 
 webdriver-manager start
 
-Em outro terminal execute os testes automatizados execute na raiz do projeto AutomationPracticeQA:
+Em outro terminal execute o comando abaixo para realizar os testes automatizados a partir da raiz do projeto AutomationPracticeQA:
 
 protractor config.js
 
@@ -74,16 +74,6 @@ protractor config.js
     Dado que eu quero visualizar um produto e adicionar ao carrinho
     Quando eu clicar na imagem do produto, informar todos dados do item após clicar “Add to cart” e depois na pop-up clicar em “Proceed to checkout”
     Então O item deve ser adicionado no carrinho de compras
-```
-
-#### F.
-
-``` 
-```
-
-#### G.
-
-``` 
 ```
 
 ### 2 - Contact Us
