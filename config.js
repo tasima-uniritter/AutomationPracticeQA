@@ -9,5 +9,6 @@ exports.config = {
                 '--disable-infobars', '--headless', '--disable-gpu', '--window-size=800,600'
             ]
         }
-    }
+    },
+    baseUrl: 'http://automationpractice.com'
 }

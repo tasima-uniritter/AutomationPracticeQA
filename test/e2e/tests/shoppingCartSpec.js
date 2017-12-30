@@ -12,7 +12,7 @@ describe('Automation Practice - Shopping Cart Tests', function () {
 		shoppingCartPage = new ShoppingCartPage();
 		
 		indexPage.get();
-    })
+    });
 
     it('1A - Adicionar o primeiro item ao carrinho de compras na página inicial', function () {
         indexPage.addItemToCart(0);

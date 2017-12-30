@@ -9,7 +9,7 @@ var ContactUsPage = function () {
 
     this.get = function () {
         browser.waitForAngularEnabled(false);
-        browser.get('http://automationpractice.com/index.php?controller=contact');
+        browser.get('/index.php?controller=contact');
     };
 
     this.selectOptionSubjectHeadingCombobox = function (optionValue) {

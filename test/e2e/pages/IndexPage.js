@@ -12,7 +12,7 @@ var IndexPage = function () {
 
     this.get = function () {
         browser.waitForAngularEnabled(false);
-        browser.get('http://automationpractice.com/index.php');
+        browser.get('/index.php');
     };
 
     this.accessContactUs = function () {
