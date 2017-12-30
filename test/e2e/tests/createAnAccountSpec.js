@@ -2,7 +2,7 @@
 
 var CreateAnAccountPage = require('../pages/CreateAnAccountPage.js');
 
-describe('Automation Practice - Shopping Cart Tests', function () {
+describe('Automation Practice - Create an Account Tests', function () {
 
     var createAnAccountPage;
 
